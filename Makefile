@@ -1,10 +1,10 @@
 RawParams=-r 44100 -c 1 -s -2
 SHELL=/bin/bash
 
-yali-voice.exe: ../../jyutping-wong setup.bat cameron-exe-readme.txt unzipsfx.exe
+cameron-voice.exe: jyutping-wong setup.bat cameron-exe-readme.txt unzipsfx.exe
 	mkdir -p partials/cant/wong
-	pushd ../../jyutping-wong ; for N in *.wav ; do sox $$N $(RawParams) $$(echo $$N|sed -e s/wav/raw/); done; popd
-	mv ../../jyutping-wong/*.raw partials/cant/wong/
+	pushd jyutping-wong ; for N in *.wav ; do sox $$N $(RawParams) $$(echo $$N|sed -e s/wav/raw/); done; popd
+	mv jyutping-wong/*.raw partials/cant/wong/
 	sox -t raw $(RawParams) /dev/null -t wav - 2>/dev/null | cat > partials/header.wav
 	cp cameron-exe-readme.txt partials/cant/README.txt
 	for N in setup.bat partials/cant/README.txt ; do python -c "import sys; sys.stdout.write(sys.stdin.read().replace('\r','').replace('\n','\r\n'))" < $$N > n && mv n $$N; done
