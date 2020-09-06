@@ -1,4 +1,8 @@
-RawParams=-r 44100 -c 1 -s -2
+# for older versions of sox:
+# RawParams=-r 44100 -c 1 -s -2
+# for newer versions:
+RawParams=-r 44100 -c 1 -e signed -b 16
+
 SHELL=/bin/bash
 
 cameron-voice.exe: jyutping-wong setup.bat cameron-exe-readme.txt unzipsfx.exe
