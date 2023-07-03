@@ -11,7 +11,7 @@ cameron-voice.exe: jyutping-wong setup.bat cameron-exe-readme.txt unzipsfx.exe
 	mv jyutping-wong/*.raw partials/cant/wong/
 	sox -t raw $(RawParams) /dev/null -t wav - 2>/dev/null | cat > partials/header.wav
 	cp cameron-exe-readme.txt partials/cant/README.txt
-	for N in setup.bat partials/cant/README.txt ; do python -c "import sys; sys.stdout.write(sys.stdin.read().replace('\r','').replace('\n','\r\n'))" < $$N > n && mv n $$N; done
+	for N in setup.bat partials/cant/README.txt ; do python3 -c "import sys; sys.stdout.buffer.write(sys.stdin.buffer.read().replace(b'\r',b'').replace(b'\n',b'\r\n'))" < $$N > n && mv n $$N; done
 	find setup.bat partials -type f | sort | zip -q -9 cameron-voice.zip -@
 	echo '$$AUTORUN$$>setup.bat' | zip -z cameron-voice.zip
 	cat unzipsfx.exe cameron-voice.zip > cameron-voice.exe
