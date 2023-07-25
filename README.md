@@ -11,7 +11,7 @@ as well as being self-extracting.
 `process.c` so it doesn't confirm the Auto-run
 command.
 
-Use `make` to make a new cameron-voice.exe from the WAVs.
+Use `make` to make a new `cameron-voice.exe` from the WAVs.
 
 ## License
 You can redistribute and/or modify these recordings under the terms of
