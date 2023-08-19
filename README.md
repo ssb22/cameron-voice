@@ -1,5 +1,6 @@
 These syllables were recorded by Cameron Wong
-for the Ekho program.
+for the [Ekho](https://github.com/hgneng/ekho) program.
+They can also be used by [Gradint](../gradint).
 
 `cameron-voice.exe` is a zip file that must be
 compatible with unzip on non-Windows platforms
