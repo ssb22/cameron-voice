@@ -17,3 +17,7 @@ cameron-voice.exe: jyutping-wong setup.bat cameron-exe-readme.txt unzipsfx.exe
 	cat unzipsfx.exe cameron-voice.zip > cameron-voice.exe
 	zip -A cameron-voice.exe
 	rm -rf partials cameron-voice.zip
+
+metadata.csv: # for HuggingFace
+	echo filename,syllable,tone > $@
+	for N in jyutping-wong/*.wav; do echo $$N,$$(echo $$N|sed -e s,.*/,, -e s/[1-7].*//),$$(echo $$N|sed -e s,[^1-7],,g); done >> $@

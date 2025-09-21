@@ -1,6 +1,30 @@
+---
+# Metadata for HuggingFace dataset viewer
+# (Humans please skip past this.  Why does HuggingFace insist it comes first?...)
+license: gpl-3.0
+task_categories:
+- text-to-speech
+- automatic-speech-recognition
+language:
+- zhy
+modality:
+- audio
+size_categories:
+- 1K<n<10K
+tags:
+- cantonese
+- syllables
+- tones
+- speech-synthesis
+- phonetics
+- native-speaker
+---
+
 These syllables were recorded by Cameron Wong
 for the [Ekho](https://github.com/hgneng/ekho) program.
 They can also be used by [Gradint](../gradint).
+
+## Compiling for Gradint
 
 `cameron-voice.exe` is a zip file that must be
 compatible with unzip on non-Windows platforms
